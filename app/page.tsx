@@ -65,7 +65,7 @@ export default function Home() {
   const getActivities = async () => {
     setLoading(true);
     const response = await fetch(
-      "https://nodeserver-v2.onrender.com/api/activities",
+      "https://nodeserver-v2.onrender.com/api/activities/all",
       {
         method: "GET",
         headers: {
@@ -83,7 +83,7 @@ export default function Home() {
 
   const startActivity = async () => {
     setLoading(true);
-    await fetch("https://nodeserver-v2.onrender.com/api/activity", {
+    await fetch("https://nodeserver-v2.onrender.com/api/activity/new", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -99,7 +99,7 @@ export default function Home() {
 
   const endActivity = async (id: string) => {
     setLoading(true);
-    await fetch(`https://nodeserver-v2.onrender.com/api/activity/${id}`, {
+    await fetch(`https://nodeserver-v2.onrender.com/api/activity/id/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
